@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kobe Bryant - Career Statistics</title>
+  <meta name="description" content="Explore Kobe Bryant's impressive career statistics and achievements in the NBA.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="stats.css">
+  <link rel="stylesheet" href="common.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Chart.js for data visualization -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- Header -->
+    <header class="main-header">
+      <div class="header-container">
+        <div class="logo">
+          <span class="logo-number">24</span>
+          <span class="logo-text">MAMBA</span>
+        </div>
+        
+        <nav class="main-nav">
+          <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="career.html">Career</a></li>
+            <li><a href="stats.html" class="active">Stats</a></li>
+            <li><a href="legacy.html">Legacy</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+          </ul>
+        </nav>
+        
+        <div class="header-actions">
+          <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+            <i class="fas fa-sun light-icon"></i>
+            <i class="fas fa-moon dark-icon"></i>
+          </button>
+          
+          <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+  
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      <div class="mobile-menu-container">
+        <ul class="mobile-nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="career.html">Career</a></li>
+          <li><a href="stats.html" class="active">Stats</a></li>
+          <li><a href="legacy.html">Legacy</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+        </ul>
+        
+        <div class="mobile-social">
+          <div class="social-container">
+            <div class="parent">
+              <a href="#" class="child" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </div>
+            <div class="parent">
+              <a href="#" class="child" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+            <div class="parent">
+              <a href="#" class="child" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+            <div class="parent">
+              <a href="#" class="child" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+    <!-- Hero Section -->
+    <section class="stats-hero">
+      <div class="stats-hero-content">
+        <h1 class="stats-title">Career <span>Statistics</span></h1>
+        <p class="stats-subtitle">The numbers behind the legend</p>
+      </div>
+      
+      <div class="stats-highlights">
+        <div class="stat-card">
+          <div class="stat-number">33,643</div>
+          <div class="stat-label">Career Points</div>
+          <div class="stat-rank">4th All-Time</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-number">5</div>
+          <div class="stat-label">NBA Championships</div>
+          <div class="stat-rank">Tied 7th All-Time</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-number">18</div>
+          <div class="stat-label">All-Star Selections</div>
+          <div class="stat-rank">2nd All-Time</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-number">15</div>
+          <div class="stat-label">All-NBA Teams</div>
+          <div class="stat-rank">Tied 3rd All-Time</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Career Overview Section -->
+    <section class="career-overview">
+      <div class="container">
+        <div class="section-header">
+          <h2>Career <span>Overview</span></h2>
+          <p>20 seasons of excellence with the Los Angeles Lakers</p>
+        </div>
+        
+        <div class="career-stats-container">
+          <div class="career-chart-container">
+            <canvas id="careerChart"></canvas>
+          </div>
+          
+          <div class="career-summary">
+            <div class="summary-card">
+              <h3>Regular Season Career</h3>
+              <ul class="stats-list">
+                <li>
+                  <span class="stat-key">Games Played:</span>
+                  <span class="stat-value">1,346</span>
+                </li>
+                <li>
+                  <span class="stat-key">Points Per Game:</span>
+                  <span class="stat-value">25.0</span>
+                </li>
+                <li>
+                  <span class="stat-key">Rebounds Per Game:</span>
+                  <span class="stat-value">5.2</span>
+                </li>
+                <li>
+                  <span class="stat-key">Assists Per Game:</span>
+                  <span class="stat-value">4.7</span>
+                </li>
+                <li>
+                  <span class="stat-key">Field Goal %:</span>
+                  <span class="stat-value">44.7%</span>
+                </li>
+                <li>
+                  <span class="stat-key">3-Point %:</span>
+                  <span class="stat-value">32.9%</span>
+                </li>
+                <li>
+                  <span class="stat-key">Free Throw %:</span>
+                  <span class="stat-value">83.7%</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="summary-card">
+              <h3>Playoff Career</h3>
+              <ul class="stats-list">
+                <li>
+                  <span class="stat-key">Games Played:</span>
+                  <span class="stat-value">220</span>
+                </li>
+                <li>
+                  <span class="stat-key">Points Per Game:</span>
+                  <span class="stat-value">25.6</span>
+                </li>
+                <li>
+                  <span class="stat-key">Rebounds Per Game:</span>
+                  <span class="stat-value">5.1</span>
+                </li>
+                <li>
+                  <span class="stat-key">Assists Per Game:</span>
+                  <span class="stat-value">4.7</span>
+                </li>
+                <li>
+                  <span class="stat-key">Field Goal %:</span>
+                  <span class="stat-value">44.8%</span>
+                </li>
+                <li>
+                  <span class="stat-key">3-Point %:</span>
+                  <span class="stat-value">33.1%</span>
+                </li>
+                <li>
+                  <span class="stat-key">Free Throw %:</span>
+                  <span class="stat-value">81.6%</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Season-by-Season Section -->
+    <section class="season-stats">
+      <div class="container">
+        <div class="section-header">
+          <h2>Season by <span>Season</span></h2>
+          <p>A detailed look at Kobe's performance throughout his career</p>
+        </div>
+        
+        <div class="season-filter">
+          <button class="filter-button active" data-filter="all">All Seasons</button>
+          <button class="filter-button" data-filter="early">Early Career (1996-2003)</button>
+          <button class="filter-button" data-filter="prime">Prime Years (2004-2013)</button>
+          <button class="filter-button" data-filter="late">Later Career (2014-2016)</button>
+        </div>
+        
+        <div class="season-table-container">
+          <table class="season-table">
+            <thead>
+              <tr>
+                <th>Season</th>
+                <th>Age</th>
+                <th>GP</th>
+                <th>PPG</th>
+                <th>RPG</th>
+                <th>APG</th>
+                <th>FG%</th>
+                <th>3P%</th>
+                <th>FT%</th>
+                <th>Accolades</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 1996-97 Season -->
+              <tr class="season-row early">
+                <td>1996-97</td>
+                <td>18</td>
+                <td>71</td>
+                <td>7.6</td>
+                <td>1.9</td>
+                <td>1.3</td>
+                <td>41.7%</td>
+                <td>37.5%</td>
+                <td>81.9%</td>
+                <td>All-Rookie Team</td>
+              </tr>
+              
+              <!-- 1997-98 Season -->
+              <tr class="season-row early">
+                <td>1997-98</td>
+                <td>19</td>
+                <td>79</td>
+                <td>15.4</td>
+                <td>3.1</td>
+                <td>2.5</td>
+                <td>42.8%</td>
+                <td>34.1%</td>
+                <td>79.4%</td>
+                <td>All-Star</td>
+              </tr>
+              
+              <!-- Add more seasons here -->
+              <tr class="season-row early">
+                <td>1998-99</td>
+                <td>20</td>
+                <td>50</td>
+                <td>19.9</td>
+                <td>5.3</td>
+                <td>3.8</td>
+                <td>46.5%</td>
+                <td>26.7%</td>
+                <td>83.9%</td>
+                <td>All-NBA</td>
+              </tr>
+              
+              <tr class="season-row early">
+                <td>1999-00</td>
+                <td>21</td>
+                <td>66</td>
+                <td>22.5</td>
+                <td>6.3</td>
+                <td>4.9</td>
+                <td>46.8%</td>
+                <td>31.9%</td>
+                <td>82.1%</td>
+                <td>All-NBA, Champion</td>
+              </tr>
+              
+              <tr class="season-row early">
+                <td>2000-01</td>
+                <td>22</td>
+                <td>68</td>
+                <td>28.5</td>
+                <td>5.9</td>
+                <td>5.0</td>
+                <td>46.4%</td>
+                <td>30.5%</td>
+                <td>85.3%</td>
+                <td>All-NBA, Champion</td>
+              </tr>
+              
+              <tr class="season-row early">
+                <td>2001-02</td>
+                <td>23</td>
+                <td>80</td>
+                <td>25.2</td>
+                <td>5.5</td>
+                <td>5.5</td>
+                <td>46.9%</td>
+                <td>25.0%</td>
+                <td>82.9%</td>
+                <td>All-NBA, Champion</td>
+              </tr>
+              
+              <tr class="season-row early">
+                <td>2002-03</td>
+                <td>24</td>
+                <td>82</td>
+                <td>30.0</td>
+                <td>6.9</td>
+                <td>5.9</td>
+                <td>45.1%</td>
+                <td>38.3%</td>
+                <td>84.3%</td>
+                <td>All-NBA</td>
+              </tr>
+              
+              <tr class="season-row prime">
+                <td>2003-04</td>
+                <td>25</td>
+                <td>65</td>
+                <td>24.0</td>
+                <td>5.5</td>
+                <td>5.1</td>
+                <td>43.8%</td>
+                <td>32.7%</td>
+                <td>85.2%</td>
+                <td>All-NBA</td>
+              </tr>
+              
+              <tr class="season-row prime">
+                <td>2004-05</td>
+                <td>26</td>
+                <td>66</td>
+                <td>27.6</td>
+                <td>5.9</td>
+                <td>6.0</td>
+                <td>43.3%</td>
+                <td>33.9%</td>
+                <td>81.6%</td>
+                <td>All-NBA</td>
+              </tr>
+              
+              <tr class="season-row prime">
+                <td>2005-06</td>
+                <td>27</td>
+                <td>80</td>
+                <td>35.4</td>
+                <td>5.3</td>
+                <td>4.5</td>
+                <td>45.0%</td>
+                <td>34.7%</td>
+                <td>85.0%</td>
+                <td>Scoring Title, All-NBA</td>
+              </tr>
+              
+              <tr class="season-row prime">
+                <td>2006-07</td>
+                <td>28</td>
+                <td>77</td>
+                <td>31.6</td>
+                <td>5.7</td>
+                <td>5.4</td>
+                <td>46.3%</td>
+                <td>34.4%</td>
+                <td>86.8%</td>
+                <td>Scoring Title, All-NBA</td>
+              </tr>
+              
+              <tr class="season-row prime">
+                <td>2007-08</td>
+                <td>29</td>
+                <td>82</td>
+                <td>28.3</td>
+                <td>6.3</td>
+                <td>5.4</td>
+                <td>45.9%</td>
+                <td>36.1%</td>
+                <td>84.0%</td>
+                <td>MVP, All-NBA</td>
+              </tr>
+              
+              <tr class="season-row prime">
+                <td>2008-09</td>
+                <td>30</td>
+                <td>82</td>
+                <td>26.8</td>
+                <td>5.2</td>
+                <td>4.9</td>
+                <td>46.7%</td>
+                <td>35.1%</td>
+                <td>85.6%</td>
+                <td>Champion, Finals MVP</td>
+              </tr>
+              
+              <tr class="season-row prime">
+                <td>2009-10</td>
+                <td>31</td>
+                <td>73</td>
+                <td>27.0</td>
+                <td>5.4</td>
+                <td>5.0</td>
+                <td>45.6%</td>
+                <td>32.9%</td>
+                <td>81.1%</td>
+                <td>Champion, Finals MVP</td>
+              </tr>
+              
+              <tr class="season-row prime">
+                <td>2010-11</td>
+                <td>32</td>
+                <td>82</td>
+                <td>25.3</td>
+                <td>5.1</td>
+                <td>4.7</td>
+                <td>45.1%</td>
+                <td>32.3%</td>
+                <td>82.8%</td>
+                <td>All-NBA</td>
+              </tr>
+              
+              <tr class="season-row prime">
+                <td>2011-12</td>
+                <td>33</td>
+                <td>58</td>
+                <td>27.9</td>
+                <td>5.4</td>
+                <td>4.6</td>
+                <td>43.0%</td>
+                <td>30.3%</td>
+                <td>84.5%</td>
+                <td>All-NBA</td>
+              </tr>
+              
+              <tr class="season-row prime">
+                <td>2012-13</td>
+                <td>34</td>
+                <td>78</td>
+                <td>27.3</td>
+                <td>5.6</td>
+                <td>6.0</td>
+                <td>46.3%</td>
+                <td>32.4%</td>
+                <td>83.9%</td>
+                <td>All-NBA</td>
+              </tr>
+              
+              <tr class="season-row late">
+                <td>2013-14</td>
+                <td>35</td>
+                <td>6</td>
+                <td>13.8</td>
+                <td>4.3</td>
+                <td>6.3</td>
+                <td>42.5%</td>
+                <td>18.8%</td>
+                <td>85.7%</td>
+                <td>Injured</td>
+              </tr>
+              
+              <tr class="season-row late">
+                <td>2014-15</td>
+                <td>36</td>
+                <td>35</td>
+                <td>22.3</td>
+                <td>5.7</td>
+                <td>5.6</td>
+                <td>37.3%</td>
+                <td>29.3%</td>
+                <td>81.3%</td>
+                <td>Injured</td>
+              </tr>
+              
+              <tr class="season-row late">
+                <td>2015-16</td>
+                <td>37</td>
+                <td>66</td>
+                <td>17.6</td>
+                <td>3.7</td>
+                <td>2.8</td>
+                <td>35.8%</td>
+                <td>28.5%</td>
+                <td>82.6%</td>
+                <td>Farewell Season</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Records Section -->
+    <section class="records-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Notable <span>Records</span></h2>
+          <p>Remarkable achievements that showcase Kobe's greatness</p>
+        </div>
+        
+        <div class="records-grid">
+          <div class="record-card">
+            <div class="record-icon">
+              <i class="fas fa-fire"></i>
+            </div>
+            <div class="record-content">
+              <h3>81 Points</h3>
+              <p>Second-highest single-game scoring performance in NBA history (vs. Toronto Raptors, January 22, 2006)</p>
+            </div>
+          </div>
+          
+          <div class="record-card">
+            <div class="record-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="record-content">
+              <h3>60 Points in Final Game</h3>
+              <p>Most points scored in a player's final NBA game (vs. Utah Jazz, April 13, 2016)</p>
+            </div>
+          </div>
+          
+          <div class="record-card">
+            <div class="record-icon">
+              <i class="fas fa-trophy"></i>
+            </div>
+            <div class="record-content">
+              <h3>18 All-Star Selections</h3>
+              <p>Second-most All-Star selections in NBA history, including 18 consecutive selections</p>
+            </div>
+          </div>
+          
+          <div class="record-card">
+            <div class="record-icon">
+              <i class="fas fa-medal"></i>
+            </div>
+            <div class="record-content">
+              <h3>4 All-Star MVPs</h3>
+              <p>Tied for most All-Star Game MVP awards in NBA history (2002, 2007, 2009, 2011)</p>
+            </div>
+          </div>
+          
+          <div class="record-card">
+            <div class="record-icon">
+              <i class="fas fa-basketball-ball"></i>
+            </div>
+            <div class="record-content">
+              <h3>33,643 Career Points</h3>
+              <p>Fourth on the all-time NBA scoring list</p>
+            </div>
+          </div>
+          
+          <div class="record-card">
+            <div class="record-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="record-content">
+              <h3>15 All-NBA Selections</h3>
+              <p>Tied for third-most All-NBA Team selections in NBA history</p>
+            </div>
+          </div>
+          
+          <div class="record-card">
+            <div class="record-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="record-content">
+              <h3>12 All-Defensive Selections</h3>
+              <p>Most All-Defensive Team selections for a guard in NBA history</p>
+            </div>
+          </div>
+          
+          <div class="record-card">
+            <div class="record-icon">
+              <i class="fas fa-stopwatch"></i>
+            </div>
+            <div class="record-content">
+              <h3>20 Seasons with One Team</h3>
+              <p>Most seasons played with a single NBA franchise</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Historical <span>Comparison</span></h2>
+          <p>How Kobe stacks up against other NBA legends</p>
+        </div>
+        
+        <div class="comparison-container">
+          <div class="comparison-chart-container">
+            <canvas id="comparisonChart"></canvas>
+          </div>
+          
+          <div class="comparison-legends">
+            <div class="legend-item">
+              <div class="legend-color" style="background-color: rgba(85, 37, 131, 0.7);"></div>
+              <div class="legend-text">Kobe Bryant</div>
+            </div>
+            
+            <div class="legend-item">
+              <div class="legend-color" style="background-color: rgba(206, 17, 65, 0.7);"></div>
+              <div class="legend-text">Michael Jordan</div>
+            </div>
+            
+            <div class="legend-item">
+              <div class="legend-color" style="background-color: rgba(0, 107, 182, 0.7);"></div>
+              <div class="legend-text">LeBron James</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <span class="logo-number">24</span>
+            <span class="logo-text">MAMBA</span>
+          </div>
+          
+          <div class="footer-nav">
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="career.html">Career</a></li>
+              <li><a href="stats.html">Stats</a></li>
+              <li><a href="legacy.html">Legacy</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="portfolio.html">Portfolio</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-social">
+            <div class="social-container">
+              <div class="parent">
+                <a href="#" class="child" aria-label="Twitter">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </div>
+              <div class="parent">
+                <a href="#" class="child" aria-label="Instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </div>
+              <div class="parent">
+                <a href="#" class="child" aria-label="GitHub">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+              <div class="parent">
+                <a href="#" class="child" aria-label="Facebook">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          <p>&copy; <span id="currentYear"></span> Kobe Bryant Tribute. All rights reserved.</p>
+          <p class="footer-tribute">Mamba Forever. 8 | 24</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="stats.js"></script>
+</body>
+</html>

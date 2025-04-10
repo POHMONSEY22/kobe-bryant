@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kobe Bryant - Photo Gallery</title>
+  <meta name="description" content="A collection of memorable photos from Kobe Bryant's life and career.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="gallery.css">
+  <link rel="stylesheet" href="common.css"> 
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Lightbox for gallery -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/css/lightgallery.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="main-header">
+    <div class="header-container">
+      <div class="logo">
+        <span class="logo-number">24</span>
+        <span class="logo-text">MAMBA</span>
+      </div>
+      
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="career.html">Career</a></li>
+          <li><a href="stats.html">Stats</a></li>
+          <li><a href="legacy.html">Legacy</a></li>
+          <li><a href="gallery.html" class="active">Gallery</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+        </ul>
+      </nav>
+      
+      <div class="header-actions">
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+          <i class="fas fa-sun light-icon"></i>
+          <i class="fas fa-moon dark-icon"></i>
+        </button>
+        
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <div class="mobile-menu-container">
+      <ul class="mobile-nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="career.html">Career</a></li>
+        <li><a href="stats.html">Stats</a></li>
+        <li><a href="legacy.html">Legacy</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+      </ul>
+      
+      <div class="mobile-social">
+        <div class="social-container">
+          <div class="parent">
+            <a href="#" class="child" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+          <div class="parent">
+            <a href="#" class="child" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+          <div class="parent">
+            <a href="#" class="child" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+          <div class="parent">
+            <a href="#" class="child" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gallery Hero Section -->
+  <section class="gallery-hero">
+    <div class="gallery-hero-content">
+      <h1 class="gallery-title">Photo <span>Gallery</span></h1>
+      <p class="gallery-subtitle">Capturing moments from an extraordinary life</p>
+    </div>
+  </section>
+
+  <!-- Gallery Filter Section -->
+  <section class="gallery-filter">
+    <div class="container">
+      <div class="filter-container">
+        <div class="filter-label">Filter by:</div>
+        <div class="filter-buttons">
+          <button class="filter-button active" data-filter="all">All Photos</button>
+          <button class="filter-button" data-filter="early-career">Early Career</button>
+          <button class="filter-button" data-filter="championships">Championships</button>
+          <button class="filter-button" data-filter="olympic">Olympic</button>
+          <button class="filter-button" data-filter="family">Family</button>
+          <button class="filter-button" data-filter="off-court">Off Court</button>
+        </div>
+      </div>
+      
+      <div class="search-container">
+        <div class="search-input">
+          <input type="text" id="gallerySearch" placeholder="Search gallery...">
+          <button class="search-button">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Gallery Section -->
+  <section class="main-gallery">
+    <div class="container">
+      <div class="gallery-grid" id="lightgallery">
+        <!-- Early Career Photos -->
+        <div class="gallery-item early-career" data-src="https://placehold.co/1200x800" data-sub-html="<h4>Draft Day (1996)</h4><p>Kobe Bryant on NBA draft day.</p>">
+          <img src="https://placehold.co/600x400" alt="Kobe Bryant Draft Day">
+          <div class="gallery-item-overlay">
+            <div class="item-info">
+              <h3>Draft Day</h3>
+              <p>1996</p>
+            </div>
+            <div class="item-icon">
+              <i class="fas fa-expand"></i>
+            </div>
+          </div>
+        </div>
+        
+        <div class="gallery-item early-career" data-src="https://placehold.co/1200x800" data-sub-html="<h4>Rookie Season (1996-97)</h4><p>Kobe during his rookie season with the Lakers.</p>">
+          <img src="https://placehold.co/600x400" alt="Kobe Bryant Rookie Season">
+          <div class="gallery-item-overlay">
+            <div class="item-info">
+              <h3>Rookie Season</h3>
+              <p>1996-97</p>
+            </div>
+            <div class="item-icon">
+              <i class="fas fa-expand"></i>
+            </div>
+          </div>
+        </div>
+        
+        <div class="gallery-item early-career" data-src="https://placehold.co/1200x800" data-sub-html="<h4>Slam Dunk Contest (1997)</h4><p>Kobe Bryant during the 1997 NBA Slam Dunk Contest.</p>">
+          <img src="https://placehold.co/600x400" alt="Kobe Bryant Slam Dunk Contest">
+          <div class="gallery-item-overlay">
+            <div class="item-info">
+              <h3>Slam Dunk Contest</h3>
+              <p>1997</p>
+            </div>
+            <div class="item-icon">
+              <i class="fas fa-expand"></i>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Championship Photos -->
+        <div class="gallery-item championships" data-src="https://placehold.co/1200x800" data-sub-html="<h4>First Championship (2000)</h4><p>Kobe celebrates his first NBA championship.</p>">
+          <img src="https://placehold.co/600x400" alt="Kobe Bryant First Championship">
+          <div class="gallery-item-overlay">
+            <div class="item-info">
+              <h3>First Championship</h3>
+              <p>2000</p>
+            </div>
+            <div class="item-icon">
+              <i class="fas fa-expand"></i>
+            </div>
+          </div>
+        </div>
+        
+        <div class="gallery-item championships" data-src="https://placehold.co/1200x800" data-sub-html="<h4>Three-Peat (2000-2002)</h4><p>Kobe and Shaq during the Lakers' three-peat era.</p>">
+          <img src="https://placehold.co/600x400" alt="Kobe Bryant Three-Peat">
+          <div class="gallery-item-overlay">
+            <div class="item-info">
+              <h3>Three-Peat</h3>
+              <p>2000-2002</p>
+            </div>
+            <div class="item-icon">
+              <i class="fas fa-expand"></i>
+            </div>
+          </div>
+        </div>
+        
+        <div class="gallery-item championships" data-src="https://placehold.co/1200x800" data-sub-html="<h4>Back-to-Back (2009-2010)</h4><p>Kobe celebrates winning back-to-back championships.</p>">
+          <img src="https://placehold.co/600x400" alt="Kobe Bryant Back-to-Back">
+          <div class="gallery-item-overlay">
+            <div class="item-info">
+              <h3>Back-to-Back</h3>
+              <p>2009-2010</p>
+            </div>
+            <div class="item-icon">
+              <i class="fas fa-expand"></i>
+            </div>
+          </div>
+        </div>
+        
+        <div class="gallery-item championships" data-src="https://placehold.co/1200x800" data-sub-html="<h4>Finals MVP (2010)</h4><p>Kobe with his Finals MVP trophy.</p>">
+          <img src="https://placehold.co/600x400" alt="Kobe Bryant Finals MVP">
+          <div class="gallery-item-overlay">
+            <div class="item-info">
+              <h3>Finals MVP</h3>
+              <p>2010</p>
+            </div>
+            <div class="item-icon">
+              <i class="fas fa-expand"></i>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Olympic Photos -->
+        <div class="gallery-item olympic" data-src="https://placehold.co/1200x800" data-sub-html="<h4>Olympic Gold (2008)</h4><p>Kobe with his 2008 Olympic gold medal.</p>">
+          <img src="https://placehold.co/600x400" alt="Kobe Bryant Olympic Gold">
+          <div class="gallery-item-overlay">
+            <div class="item-info">
+              <h3>Olympic Gold</h3>
+              <p>2008</p>
+            </div>
+            <div class="item-icon">
+              <i class="fas fa-expand"></i>
+            </div>
+          </div>
+        </div>
+        
+        <div class="gallery-item olympic" data-src="https://placehold.co/1200x800" data-sub-html="<h4>Team USA (2012)</h4><p>Kobe with Team USA at the 2012 Olympics.</p>">
+          <img src="https://placehold.co/600x400" alt="Kobe Bryant Team USA">
+          <div class="gallery-item-overlay">
+            <div class="item-info">
+              <h3>Team USA</h3>
+              <p>2012</p>
+            </div>
+            <div class="item-icon">
+              <i class="fas fa-expand"></i>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Family Photos -->
+        <div class="gallery-item family" data-src="https://placehold.co/1200x800" data-sub-html="<h4>Family Man</h4><p>Kobe with his family.</p>">
+          <img src="https://placehold.co/600x400" alt="Kobe Bryant Family">
+          <div class="gallery-item-overlay">
+            <div class="item-info">
+              <h3>Family Man</h3>
+              <p>2019</p>
+            </div>
+            <div class="item-icon">
+              <i class="fas fa-expand"></i>
+            </div>
+          </div>
+        </div>
+        
+        <div class="gallery-item family" data-src="https://placehold.co/1200x800" data-sub-html="<h4>Kobe and Gianna</h4><p>Kobe with his daughter Gianna at a basketball game.</p>">
+          <img src="https://placehold.co/600x400" alt="Kobe and Gianna">
+          <div class="gallery-item-overlay">
+            <div class="item-info">
+              <h3>Kobe and Gianna</h3>
+              <p>2019</p>
+            </div>
+            <div class="item-icon">
+              <i class="fas fa-expand"></i>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Off Court Photos -->
+        <div class="gallery-item off-court" data-src="https://placehold.co/1200x800" data-sub-html="<h4>Oscar Winner</h4><p>Kobe with his Academy Award for 'Dear Basketball'.</p>">
+          <img src="https://placehold.co/600x400" alt="Kobe Bryant Oscar">
+          <div class="gallery-item-overlay">
+            <div class="item-info">
+              <h3>Oscar Winner</h3>
+              <p>2018</p>
+            </div>
+            <div class="item-icon">
+              <i class="fas fa-expand"></i>
+            </div>
+          </div>
+        </div>
+        
+        <div class="gallery-item off-court" data-src="https://placehold.co/1200x800" data-sub-html="<h4>Author</h4><p>Kobe at a book signing event for 'The Mamba Mentality'.</p>">
+          <img src="https://placehold.co/600x400" alt="Kobe Bryant Author">
+          <div class="gallery-item-overlay">
+            <div class="item-info">
+              <h3>Author</h3>
+              <p>2018</p>
+            </div>
+            <div class="item-icon">
+              <i class="fas fa-expand"></i>
+            </div>
+          </div>
+        </div>
+        
+        <div class="gallery-item off-court" data-src="https://placehold.co/1200x800" data-sub-html="<h4>Entrepreneur</h4><p>Kobe at a business event discussing his ventures.</p>">
+          <img src="https://placehold.co/600x400" alt="Kobe Bryant Entrepreneur">
+          <div class="gallery-item-overlay">
+            <div class="item-info">
+              <h3>Entrepreneur</h3>
+              <p>2017</p>
+            </div>
+            <div class="item-icon">
+              <i class="fas fa-expand"></i>
+            </div>
+          </div>
+        </div>
+        
+        <div class="gallery-item off-court" data-src="https://placehold.co/1200x800" data-sub-html="<h4>Jersey Retirement</h4><p>Kobe at his jersey retirement ceremony.</p>">
+          <img src="https://placehold.co/600x400" alt="Kobe Bryant Jersey Retirement">
+          <div class="gallery-item-overlay">
+            <div class="item-info">
+              <h3>Jersey Retirement</h3>
+              <p>2017</p>
+            </div>
+            <div class="item-icon">
+              <i class="fas fa-expand"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="gallery-load-more">
+        <button class="load-more-button">
+          <span>Load More</span>
+          <i class="fas fa-plus"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fan Submissions Section -->
+  <section class="fan-submissions">
+    <div class="container">
+      <div class="section-header">
+        <h2>Fan <span>Submissions</span></h2>
+        <p>Share your favorite Kobe Bryant photos and memories</p>
+      </div>
+      
+      <div class="submission-form-container">
+        <form class="submission-form">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="photoUpload">Upload Photo</label>
+            <div class="upload-container">
+              <input type="file" id="photoUpload" accept="image/*">
+              <div class="upload-button">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <span>Choose File</span>
+              </div>
+              <div class="file-name">No file chosen</div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" rows="4" required></textarea>
+          </div>
+          
+          <button type="submit" class="submit-button">
+            <span>Submit Photo</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+      
+      <div class="fan-gallery">
+        <h3>Recent Fan Submissions</h3>
+        
+        <div class="fan-gallery-grid">
+          <div class="fan-item">
+            <div class="fan-image">
+              <img src="https://placehold.co/400x300" alt="Fan Submission">
+            </div>
+            <div class="fan-info">
+              <h4>Meeting Kobe</h4>
+              <p>Submitted by: John D.</p>
+              <p class="fan-description">I met Kobe at a Lakers game in 2015. He was so kind and took the time to sign my jersey.</p>
+            </div>
+          </div>
+          
+          <div class="fan-item">
+            <div class="fan-image">
+              <img src="https://placehold.co/400x300" alt="Fan Submission">
+            </div>
+            <div class="fan-info">
+              <h4>Kobe's Last Game</h4>
+              <p>Submitted by: Sarah M.</p>
+              <p class="fan-description">I was lucky enough to attend Kobe's final game. An unforgettable experience!</p>
+            </div>
+          </div>
+          
+          <div class="fan-item">
+            <div class="fan-image">
+              <img src="https://placehold.co/400x300" alt="Fan Submission">
+            </div>
+            <div class="fan-info">
+              <h4>Mamba Mentality</h4>
+              <p>Submitted by: Michael T.</p>
+              <p class="fan-description">This mural in my hometown was painted after Kobe's passing. It inspires me every day.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-number">24</span>
+          <span class="logo-text">MAMBA</span>
+        </div>
+        
+        <div class="footer-nav">
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="career.html">Career</a></li>
+            <li><a href="stats.html">Stats</a></li>
+            <li><a href="legacy.html">Legacy</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-social">
+          <div class="social-container">
+            <div class="parent">
+              <a href="#" class="child" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </div>
+            <div class="parent">
+              <a href="#" class="child" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+            <div class="parent">
+              <a href="#" class="child" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+            <div class="parent">
+              <a href="#" class="child" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear"></span> Kobe Bryant Tribute. All rights reserved.</p>
+        <p class="footer-tribute">Mamba Forever. 8 | 24</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/lightgallery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/plugins/zoom/lg-zoom.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/plugins/thumbnail/lg-thumbnail.min.js"></script>
+  
+  <script src="script.js"></script>
+  <script src="gallery.js"></script>
+</body>
+</html>

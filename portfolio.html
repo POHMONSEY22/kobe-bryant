@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kobe Bryant - Portfolio</title>
+  <meta name="description" content="Explore Kobe Bryant's ventures and achievements outside the basketball court.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="portfolio.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Cursor Follower -->
+  <div class="cursor-follower"></div>
+
+  <!-- Main Container -->
+  <div class="portfolio-container">
+    <!-- Side Navigation -->
+    <nav class="portfolio-nav">
+      <div class="nav-logo">
+        <span class="logo-number">24</span>
+        <span class="logo-text">MAMBA</span>
+      </div>
+      
+      <ul class="nav-links">
+        <li><a href="#hero" class="active">Home</a></li>
+        <li><a href="#ventures">Ventures</a></li>
+        <li><a href="#books">Books</a></li>
+        <li><a href="#films">Films</a></li>
+        <li><a href="#philanthropy">Philanthropy</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+      </ul>
+      
+      <div class="nav-footer">
+        <div class="theme-toggle-wrapper">
+          <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+            <i class="fas fa-sun light-icon"></i>
+            <i class="fas fa-moon dark-icon"></i>
+          </button>
+        </div>
+        
+        <div class="social-container">
+          <div class="parent">
+            <a href="#" class="child" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+          <div class="parent">
+            <a href="#" class="child" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+          <div class="parent">
+            <a href="#" class="child" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+          <div class="parent">
+            <a href="#" class="child" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </div>
+        </div>
+        
+        <a href="index.html" class="back-to-site">
+          <i class="fas fa-arrow-left"></i> Back to Main Site
+        </a>
+      </div>
+    </nav>
+
+    <!-- Content Area -->
+    <main class="portfolio-content">
+      <!-- Mobile Header -->
+      <header class="mobile-header">
+        <div class="mobile-logo">
+          <span class="logo-number">24</span>
+          <span class="logo-text">MAMBA</span>
+        </div>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </header>
+
+      <!-- Hero Section -->
+      <section id="hero" class="portfolio-section hero-section">
+        <div class="hero-content">
+          <h1 class="glitch-text" data-text="BEYOND THE COURT">BEYOND THE COURT</h1>
+          <p class="hero-subtitle">Exploring Kobe Bryant's Legacy Outside Basketball</p>
+          <div class="hero-cta">
+            <a href="#ventures" class="cta-button">
+              <span>Explore</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="image-container">
+            <img src="https://placehold.co/800x1000" alt="Kobe Bryant">
+            <div class="image-overlay"></div>
+          </div>
+        </div>
+        <div class="scroll-indicator">
+          <span>Scroll</span>
+          <div class="scroll-line"></div>
+        </div>
+      </section>
+
+      <!-- Ventures Section -->
+      <section id="ventures" class="portfolio-section ventures-section">
+        <div class="section-header">
+          <h2>Business <span>Ventures</span></h2>
+          <p>Kobe's entrepreneurial spirit led to successful business endeavors</p>
+        </div>
+        
+        <div class="ventures-grid">
+          <!-- Venture Card 1 -->
+          <div class="venture-card">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="card-image">
+                  <img src="https://placehold.co/600x400" alt="Bryant Stibel">
+                </div>
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                  <h3>Bryant Stibel</h3>
+                  <span class="card-year">2013</span>
+                </div>
+              </div>
+              <div class="card-back">
+                <h3>Bryant Stibel</h3>
+                <p>A venture capital firm co-founded by Kobe Bryant and Jeff Stibel, focusing on technology, media, and data companies.</p>
+                <ul class="card-details">
+                  <li><i class="fas fa-check-circle"></i> $2 billion in assets</li>
+                  <li><i class="fas fa-check-circle"></i> Invested in companies like Epic Games</li>
+                  <li><i class="fas fa-check-circle"></i> Focus on tech and media</li>
+                </ul>
+                <a href="#" class="card-link">Learn More</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Venture Card 2 -->
+          <div class="venture-card">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="card-image">
+                  <img src="https://placehold.co/600x400" alt="Body Armor">
+                </div>
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                  <h3>Body Armor</h3>
+                  <span class="card-year">2014</span>
+                </div>
+              </div>
+              <div class="card-back">
+                <h3>Body Armor</h3>
+                <p>Kobe invested $6 million in Body Armor sports drink, which later became worth over $200 million after Coca-Cola's acquisition.</p>
+                <ul class="card-details">
+                  <li><i class="fas fa-check-circle"></i> 30x return on investment</li>
+                  <li><i class="fas fa-check-circle"></i> Competed with Gatorade</li>
+                  <li><i class="fas fa-check-circle"></i> Acquired by Coca-Cola</li>
+                </ul>
+                <a href="#" class="card-link">Learn More</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Venture Card 3 -->
+          <div class="venture-card">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="card-image">
+                  <img src="https://placehold.co/600x400" alt="Granity Studios">
+                </div>
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                  <h3>Granity Studios</h3>
+                  <span class="card-year">2016</span>
+                </div>
+              </div>
+              <div class="card-back">
+                <h3>Granity Studios</h3>
+                <p>A multimedia content company founded by Kobe to create new ways to tell stories around sports.</p>
+                <ul class="card-details">
+                  <li><i class="fas fa-check-circle"></i> Created "Dear Basketball"</li>
+                  <li><i class="fas fa-check-circle"></i> Published multiple books</li>
+                  <li><i class="fas fa-check-circle"></i> Focused on youth storytelling</li>
+                </ul>
+                <a href="#" class="card-link">Learn More</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Venture Card 4 -->
+          <div class="venture-card">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="card-image">
+                  <img src="https://placehold.co/600x400" alt="Mamba Sports Academy">
+                </div>
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                  <h3>Mamba Sports Academy</h3>
+                  <span class="card-year">2018</span>
+                </div>
+              </div>
+              <div class="card-back">
+                <h3>Mamba Sports Academy</h3>
+                <p>A training facility founded to develop young athletes with a focus on a holistic approach to training.</p>
+                <ul class="card-details">
+                  <li><i class="fas fa-check-circle"></i> Multi-sport training facility</li>
+                  <li><i class="fas fa-check-circle"></i> Focused on youth development</li>
+                  <li><i class="fas fa-check-circle"></i> Embodied the Mamba Mentality</li>
+                </ul>
+                <a href="#" class="card-link">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Books Section -->
+      <section id="books" class="portfolio-section books-section">
+        <div class="section-header">
+          <h2>Published <span>Works</span></h2>
+          <p>Kobe's literary contributions and storytelling legacy</p>
+        </div>
+        
+        <div class="books-showcase">
+          <!-- Book 1 -->
+          <div class="book-card">
+            <div class="book">
+              <div class="book-cover">
+                <img src="https://placehold.co/400x600" alt="The Mamba Mentality">
+                <div class="book-spine"></div>
+              </div>
+              <div class="book-details">
+                <h3>The Mamba Mentality</h3>
+                <p class="book-subtitle">How I Play</p>
+                <p class="book-description">Kobe Bryant reveals his famously detailed approach and the steps he took to prepare mentally and physically to excel at the game.</p>
+                <div class="book-meta">
+                  <span><i class="fas fa-calendar"></i> 2018</span>
+                  <span><i class="fas fa-star"></i> Bestseller</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Book 2 -->
+          <div class="book-card">
+            <div class="book">
+              <div class="book-cover">
+                <img src="https://placehold.co/400x600" alt="The Wizenard Series">
+                <div class="book-spine"></div>
+              </div>
+              <div class="book-details">
+                <h3>The Wizenard Series</h3>
+                <p class="book-subtitle">Training Camp</p>
+                <p class="book-description">A young adult fantasy sports series that follows a basketball team and their magical coach who teaches them about the game and life.</p>
+                <div class="book-meta">
+                  <span><i class="fas fa-calendar"></i> 2019</span>
+                  <span><i class="fas fa-award"></i> #1 New York Times</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Book 3 -->
+          <div class="book-card">
+            <div class="book">
+              <div class="book-cover">
+                <img src="https://placehold.co/400x600" alt="Legacy and the Queen">
+                <div class="book-spine"></div>
+              </div>
+              <div class="book-details">
+                <h3>Legacy and the Queen</h3>
+                <p class="book-subtitle"></p>
+                <p class="book-description">A tennis-themed fantasy novel about a young girl who must win a tournament to save her father's academy and her kingdom.</p>
+                <div class="book-meta">
+                  <span><i class="fas fa-calendar"></i> 2019</span>
+                  <span><i class="fas fa-book"></i> Young Adult</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Book 4 -->
+          <div class="book-card">
+            <div class="book">
+              <div class="book-cover">
+                <img src="https://placehold.co/400x600" alt="Epoca: The Tree of Ecrof">
+                <div class="book-spine"></div>
+              </div>
+              <div class="book-details">
+                <h3>Epoca: The Tree of Ecrof</h3>
+                <p class="book-subtitle"></p>
+                <p class="book-description">A fantasy novel set in a world where athletes have magical powers and must navigate sports, friendship, and destiny.</p>
+                <div class="book-meta">
+                  <span><i class="fas fa-calendar"></i> 2019</span>
+                  <span><i class="fas fa-users"></i> Middle Grade</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Films Section -->
+      <section id="films" class="portfolio-section films-section">
+        <div class="section-header">
+          <h2>Film & <span>Animation</span></h2>
+          <p>Kobe's storytelling through film and animation</p>
+        </div>
+        
+        <div class="films-container">
+          <!-- Film 1: Dear Basketball -->
+          <div class="film-card">
+            <div class="film-poster">
+              <img src="https://placehold.co/500x700" alt="Dear Basketball">
+              <div class="film-overlay">
+                <a href="#" class="play-button">
+                  <i class="fas fa-play"></i>
+                </a>
+              </div>
+            </div>
+            <div class="film-info">
+              <h3>Dear Basketball</h3>
+              <div class="film-meta">
+                <span class="film-year">2017</span>
+                <span class="film-award">Academy Award Winner</span>
+              </div>
+              <p class="film-description">
+                An animated short film based on Kobe Bryant's retirement letter, narrated by Bryant himself. The film won the Academy Award for Best Animated Short Film.
+              </p>
+              <div class="film-credits">
+                <p><strong>Director:</strong> Glen Keane</p>
+                <p><strong>Music:</strong> John Williams</p>
+                <p><strong>Written by:</strong> Kobe Bryant</p>
+              </div>
+              <div class="film-tags">
+                <span>Animation</span>
+                <span>Short Film</span>
+                <span>Sports</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Film 2: Muse -->
+          <div class="film-card">
+            <div class="film-poster">
+              <img src="https://placehold.co/500x700" alt="Muse">
+              <div class="film-overlay">
+                <a href="#" class="play-button">
+                  <i class="fas fa-play"></i>
+                </a>
+              </div>
+            </div>
+            <div class="film-info">
+              <h3>Muse</h3>
+              <div class="film-meta">
+                <span class="film-year">2015</span>
+                <span class="film-award">Documentary</span>
+              </div>
+              <p class="film-description">
+                A documentary that explores Kobe Bryant's inspirations, challenges, and motivations throughout his basketball career.
+              </p>
+              <div class="film-credits">
+                <p><strong>Director:</strong> Gotham Chopra</p>
+                <p><strong>Producer:</strong> Kobe Bryant</p>
+              </div>
+              <div class="film-tags">
+                <span>Documentary</span>
+                <span>Sports</span>
+                <span>Biography</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Film 3: Detail -->
+          <div class="film-card">
+            <div class="film-poster">
+              <img src="https://placehold.co/500x700" alt="Detail">
+              <div class="film-overlay">
+                <a href="#" class="play-button">
+                  <i class="fas fa-play"></i>
+                </a>
+              </div>
+            </div>
+            <div class="film-info">
+              <h3>Detail</h3>
+              <div class="film-meta">
+                <span class="film-year">2018-2020</span>
+                <span class="film-award">ESPN+ Series</span>
+              </div>
+              <p class="film-description">
+                A sports analysis series created and hosted by Kobe Bryant, breaking down the nuances of basketball gameplay and strategy.
+              </p>
+              <div class="film-credits">
+                <p><strong>Creator:</strong> Kobe Bryant</p>
+                <p><strong>Network:</strong> ESPN+</p>
+              </div>
+              <div class="film-tags">
+                <span>Sports Analysis</span>
+                <span>Series</span>
+                <span>Educational</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Philanthropy Section -->
+      <section id="philanthropy" class="portfolio-section philanthropy-section">
+        <div class="section-header">
+          <h2>Philanthropy & <span>Impact</span></h2>
+          <p>Kobe's commitment to making a difference in the world</p>
+        </div>
+        
+        <div class="philanthropy-content">
+          <div class="philanthropy-image">
+            <img src="https://placehold.co/800x600" alt="Kobe Bryant Philanthropy">
+            <div class="image-overlay"></div>
+          </div>
+          
+          <div class="philanthropy-info">
+            <div class="philanthropy-card">
+              <div class="card-icon">
+                <i class="fas fa-heart"></i>
+              </div>
+              <div class="card-content">
+                <h3>Kobe & Vanessa Bryant Family Foundation</h3>
+                <p>Dedicated to improving the lives of youth and families in need, both domestically and globally.</p>
+              </div>
+            </div>
+            
+            <div class="philanthropy-card">
+              <div class="card-icon">
+                <i class="fas fa-home"></i>
+              </div>
+              <div class="card-content">
+                <h3>Youth Homelessness Initiative</h3>
+                <p>Worked to combat youth homelessness in Los Angeles through various programs and partnerships.</p>
+              </div>
+            </div>
+            
+            <div class="philanthropy-card">
+              <div class="card-icon">
+                <i class="fas fa-globe-americas"></i>
+              </div>
+              <div class="card-content">
+                <h3>Make-A-Wish Foundation</h3>
+                <p>Granted over 200 wishes for children with critical illnesses, making him one of the most requested celebrities.</p>
+              </div>
+            </div>
+            
+            <div class="philanthropy-card">
+              <div class="card-icon">
+                <i class="fas fa-basketball-ball"></i>
+              </div>
+              <div class="card-content">
+                <h3>After-School All-Stars</h3>
+                <p>Served as an ambassador for this organization providing after-school programs to children across the US.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="impact-numbers">
+          <div class="impact-item">
+            <div class="impact-number" data-count="200">0</div>
+            <p>Make-A-Wish<br>Wishes Granted</p>
+          </div>
+          <div class="impact-item">
+            <div class="impact-number" data-count="15">0</div>
+            <p>Years of<br>Philanthropy</p>
+          </div>
+          <div class="impact-item">
+            <div class="impact-number" data-count="8">0</div>
+            <p>Major Charitable<br>Initiatives</p>
+          </div>
+          <div class="impact-item">
+            <div class="impact-number" data-count="1">0</div>
+            <p>Lasting<br>Legacy</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery Section -->
+      <section id="gallery" class="portfolio-section gallery-section">
+        <div class="section-header">
+          <h2>Visual <span>Gallery</span></h2>
+          <p>Moments from Kobe's life beyond basketball</p>
+        </div>
+        
+        <div class="gallery-grid">
+          <div class="gallery-item item-tall">
+            <img src="https://placehold.co/600x900" alt="Kobe Bryant">
+            <div class="gallery-overlay">
+              <div class="gallery-caption">
+                <h3>Oscar Night</h3>
+                <p>2018</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="gallery-item">
+            <img src="https://placehold.co/600x600" alt="Kobe Bryant">
+            <div class="gallery-overlay">
+              <div class="gallery-caption">
+                <h3>Family Man</h3>
+                <p>2019</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="gallery-item">
+            <img src="https://placehold.co/600x600" alt="Kobe Bryant">
+            <div class="gallery-overlay">
+              <div class="gallery-caption">
+                <h3>Author Event</h3>
+                <p>2018</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="gallery-item item-wide">
+            <img src="https://placehold.co/900x600" alt="Kobe Bryant">
+            <div class="gallery-overlay">
+              <div class="gallery-caption">
+                <h3>Business Panel</h3>
+                <p>2016</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="gallery-item">
+            <img src="https://placehold.co/600x600" alt="Kobe Bryant">
+            <div class="gallery-overlay">
+              <div class="gallery-caption">
+                <h3>Coaching Youth</h3>
+                <p>2019</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="gallery-item">
+            <img src="https://placehold.co/600x600" alt="Kobe Bryant">
+            <div class="gallery-overlay">
+              <div class="gallery-caption">
+                <h3>Mamba Academy</h3>
+                <p>2018</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="gallery-item item-tall">
+            <img src="https://placehold.co/600x900" alt="Kobe Bryant">
+            <div class="gallery-overlay">
+              <div class="gallery-caption">
+                <h3>Public Speaking</h3>
+                <p>2017</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="portfolio-section contact-section">
+        <div class="section-header">
+          <h2>Get <span>In Touch</span></h2>
+          <p>For inquiries about Kobe's legacy and foundation</p>
+        </div>
+        
+        <div class="contact-container">
+          <div class="contact-form-container">
+            <form class="contact-form">
+              <div class="form-group">
+                <div class="input-container">
+                  <input type="text" id="name" required>
+                  <label for="name">Your Name</label>
+                  <div class="input-underline"></div>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <div class="input-container">
+                  <input type="email" id="email" required>
+                  <label for="email">Your Email</label>
+                  <div class="input-underline"></div>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <div class="input-container">
+                  <textarea id="message" required></textarea>
+                  <label for="message">Your Message</label>
+                  <div class="input-underline"></div>
+                </div>
+              </div>
+              
+              <button type="submit" class="submit-button">
+                <span>Send Message</span>
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+          
+          <div class="contact-info">
+            <div class="info-card">
+              <div class="info-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="info-content">
+                <h3>Email</h3>
+                <p>info@kobelegacy.org</p>
+              </div>
+            </div>
+            
+            <div class="info-card">
+              <div class="info-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="info-content">
+                <h3>Foundation</h3>
+                <p>Los Angeles, California</p>
+              </div>
+            </div>
+            
+            <div class="info-card">
+              <div class="info-icon">
+                <i class="fas fa-globe"></i>
+              </div>
+              <div class="info-content">
+                <h3>Website</h3>
+                <p>www.kobelegacy.org</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="portfolio-footer">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <span class="logo-number">24</span>
+            <span class="logo-text">MAMBA</span>
+          </div>
+          
+          <div class="footer-quote">
+            "The most important thing is to try and inspire people so that they can be great in whatever they want to do."
+          </div>
+          
+          <div class="footer-social">
+            <div class="social-container">
+              <div class="parent">
+                <a href="#" class="child" aria-label="Twitter">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </div>
+              <div class="parent">
+                <a href="#" class="child" aria-label="Instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </div>
+              <div class="parent">
+                <a href="#" class="child" aria-label="GitHub">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+              <div class="parent">
+                <a href="#" class="child" aria-label="Facebook">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          <p>&copy; <span id="currentYear"></span> Kobe Bryant Legacy. All rights reserved.</p>
+          <a href="index.html" class="back-link">Back to Main Site</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="portfolio.js"></script>
+</body>
+</html>

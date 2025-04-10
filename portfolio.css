@@ -1,0 +1,1508 @@
+/* Portfolio Page Specific Styles */
+
+:root {
+    --lakers-purple: #552583;
+    --lakers-gold: #FDB927;
+    --lakers-purple-dark: #2a1142;
+    --lakers-gold-dark: #d49000;
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --bg-primary: #121212;
+    --bg-secondary: #1e1e1e;
+    --bg-card: #252525;
+    --glow-color: rgba(253, 185, 39, 0.3);
+    --transition-slow: 0.5s cubic-bezier(0.68, 0.85, 0.265, 1.55);
+    --transition-medium: 0.3s cubic-bezier(0.68, 0.85, 0.265, 1.55);
+    --transition-fast: 0.2s ease;
+}
+
+.light {
+    --text-primary: #121212;
+    --text-secondary: rgba(0, 0, 0, 0.7);
+    --bg-primary: #f5f5f5;
+    --bg-secondary: #e5e5e5;
+    --bg-card: #ffffff;
+    --glow-color: rgba(85, 37, 131, 0.2);
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    cursor: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Custom Cursor */
+.cursor-follower {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background-color: var(--lakers-gold);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s, background-color 0.3s;
+    mix-blend-mode: difference;
+}
+
+/* Main Layout */
+.portfolio-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Side Navigation */
+.portfolio-nav {
+    width: 280px;
+    height: 100vh;
+    position: fixed;
+    background-color: var(--bg-secondary);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    z-index: 100;
+    transition: transform var(--transition-medium);
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.logo-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--lakers-gold);
+    line-height: 1;
+}
+
+.logo-text {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 0.5rem;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    flex: 1;
+}
+
+.nav-links li {
+    margin-bottom: 1rem;
+}
+
+.nav-links a {
+    display: block;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--lakers-gold);
+    transition: width var(--transition-medium);
+}
+
+.nav-links a:hover::before,
+.nav-links a.active::before {
+    width: 100%;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background-color: rgba(85, 37, 131, 0.2);
+    color: var(--lakers-gold);
+}
+
+.nav-footer {
+    margin-top: 2rem;
+}
+
+.theme-toggle-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 50px;
+    height: 25px;
+    border-radius: 25px;
+    background-color: var(--bg-card);
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+    transition: all var(--transition-fast);
+}
+
+.theme-toggle::before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: var(--lakers-gold);
+    transition: transform var(--transition-fast);
+}
+
+.dark .theme-toggle::before {
+    transform: translateX(0);
+}
+
+.light .theme-toggle::before {
+    transform: translateX(25px);
+}
+
+.light-icon,
+.dark-icon {
+    font-size: 12px;
+    color: var(--text-primary);
+    transition: opacity var(--transition-fast);
+}
+
+.light-icon {
+    margin-left: auto;
+}
+
+.dark .light-icon {
+    opacity: 0.5;
+}
+
+.light .light-icon {
+    opacity: 1;
+}
+
+.dark .dark-icon {
+    opacity: 1;
+}
+
+.light .dark-icon {
+    opacity: 0.5;
+}
+
+.social-container {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Social Media Buttons from uiverse.io */
+.parent {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transition: all 0.3s cubic-bezier(0.68, 0.85, 0.265, 1.55);
+    border-radius: 5px;
+}
+
+.child {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--lakers-purple);
+    border-radius: 5px;
+    transition: all 0.3s cubic-bezier(0.68, 0.85, 0.265, 1.55);
+    transform: perspective(180px) rotateX(0deg) rotateY(0deg) translateZ(2px);
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.2),
+        inset 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.child i {
+    color: var(--lakers-gold);
+    font-size: 1.5rem;
+}
+
+.parent:hover {
+    transform: perspective(180px) rotateX(0.5deg) rotateY(0deg) translateZ(2px);
+}
+
+.child:hover {
+    background-color: white;
+    background-position:
+      -100px 100px,
+      -100px 100px;
+    /*transform: rotate3d(0.5, 1, 0, 30deg);*/
+    transform: perspective(180px) rotateX(60deg) translateY(2px);
+}
+.child:hover i {
+    color: var(--lakers-purple);
+}
+
+.back-to-site {
+    display: block;
+    text-align: center;
+    padding: 0.75rem;
+    border-radius: 8px;
+    background-color: var(--bg-card);
+    transition: all var(--transition-fast);
+}
+
+.back-to-site:hover {
+    background-color: var(--lakers-purple);
+    color: var(--lakers-gold);
+}
+
+/* Content Area */
+.portfolio-content {
+    flex: 1;
+    margin-left: 280px;
+    overflow-x: hidden;
+}
+
+/* Mobile Header */
+.mobile-header {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background-color: var(--bg-secondary);
+    z-index: 99;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile-menu-toggle {
+    background: none;
+    border: none;
+    width: 30px;
+    height: 25px;
+    position: relative;
+    cursor: pointer;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-primary);
+    position: absolute;
+    left: 0;
+    transition: all var(--transition-fast);
+}
+
+.mobile-menu-toggle span:nth-child(1) {
+    top: 0;
+}
+
+.mobile-menu-toggle span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.mobile-menu-toggle span:nth-child(3) {
+    bottom: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 50%;
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg);
+    bottom: 50%;
+}
+
+/* Portfolio Sections */
+.portfolio-section {
+    padding: 5rem 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-header h2 span {
+    color: var(--lakers-gold);
+}
+
+.section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: var(--lakers-gold);
+}
+
+.section-header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    overflow: hidden;
+}
+
+.hero-content {
+    width: 50%;
+    padding: 0 3rem;
+    position: relative;
+    z-index: 2;
+}
+
+.glitch-text {
+    font-size: 4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    position: relative;
+    color: var(--text-primary);
+    letter-spacing: 5px;
+    animation: glitch 5s infinite;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+}
+
+.glitch-text::before {
+    color: var(--lakers-gold);
+    z-index: -1;
+    animation: glitch-anim 3s infinite;
+}
+
+.glitch-text::after {
+    color: var(--lakers-purple);
+    z-index: -2;
+    animation: glitch-anim2 2.5s infinite;
+}
+
+@keyframes glitch-anim {
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(-5px, 5px);
+    }
+
+    40% {
+        transform: translate(-5px, -5px);
+    }
+
+    60% {
+        transform: translate(5px, 5px);
+    }
+
+    80% {
+        transform: translate(5px, -5px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+@keyframes glitch-anim2 {
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(5px, -5px);
+    }
+
+    40% {
+        transform: translate(5px, 5px);
+    }
+
+    60% {
+        transform: translate(-5px, -5px);
+    }
+
+    80% {
+        transform: translate(-5px, 5px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin: 2rem 0;
+    color: var(--text-secondary);
+    max-width: 500px;
+}
+
+.hero-cta {
+    margin-top: 2rem;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--lakers-gold);
+    color: var(--lakers-purple);
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateX(-100%);
+    transition: transform var(--transition-medium);
+}
+
+.cta-button:hover::before {
+    transform: translateX(0);
+}
+
+.cta-button i {
+    margin-left: 0.75rem;
+    transition: transform var(--transition-fast);
+}
+
+.cta-button:hover i {
+    transform: translateX(5px);
+}
+
+.hero-image {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.image-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, var(--bg-primary), transparent);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    z-index: 2;
+}
+
+.scroll-line {
+    width: 2px;
+    height: 50px;
+    background-color: var(--text-secondary);
+    margin-top: 0.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.scroll-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--lakers-gold);
+    animation: scrollDown 2s infinite;
+}
+
+@keyframes scrollDown {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+/* Ventures Section */
+.ventures-section {
+    background-color: var(--bg-secondary);
+}
+
+.ventures-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.venture-card {
+    height: 400px;
+    perspective: 1000px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform var(--transition-slow);
+    transform-style: preserve-3d;
+}
+
+.venture-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.card-front {
+    background-color: var(--bg-card);
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-medium);
+}
+
+.venture-card:hover .card-image img {
+    transform: scale(1.1);
+}
+
+.card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem;
+    z-index: 1;
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.card-year {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background-color: var(--lakers-gold);
+    color: var(--lakers-purple);
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.card-back {
+    background: linear-gradient(135deg, var(--lakers-purple), var(--lakers-purple-dark));
+    transform: rotateY(180deg);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-back h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--lakers-gold);
+}
+
+.card-back p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.card-details {
+    margin-bottom: 1.5rem;
+}
+
+.card-details li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+}
+
+.card-details i {
+    color: var(--lakers-gold);
+    margin-right: 0.75rem;
+    margin-top: 0.25rem;
+}
+
+.card-link {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--lakers-gold);
+    color: var(--lakers-purple);
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all var(--transition-fast);
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+.card-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Books Section */
+.books-section {
+    background-color: var(--bg-primary);
+}
+
+.books-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 3rem;
+}
+
+.book-card {
+    perspective: 1000px;
+}
+
+.book {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    transform-style: preserve-3d;
+    transition: transform var(--transition-slow);
+}
+
+.book-card:hover .book {
+    transform: rotateY(30deg);
+}
+
+.book-cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transform-origin: left;
+    transition: transform var(--transition-slow);
+}
+
+.book-card:hover .book-cover {
+    transform: rotateY(30deg);
+}
+
+.book-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.book-spine {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 100%;
+    background-color: var(--lakers-purple);
+    transform: rotateY(90deg) translateZ(-15px);
+    transform-origin: left;
+}
+
+.book-details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    background-color: var(--bg-card);
+    border-radius: 10px;
+    transform: translateZ(-50px);
+    opacity: 0;
+    transition: opacity var(--transition-medium);
+}
+
+.book-card:hover .book-details {
+    opacity: 1;
+}
+
+.book-details h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--lakers-gold);
+}
+
+.book-subtitle {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.book-description {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.book-meta {
+    display: flex;
+    gap: 1rem;
+}
+
+.book-meta span {
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.book-meta i {
+    margin-right: 0.5rem;
+    color: var(--lakers-gold);
+}
+
+/* Films Section */
+.films-section {
+    background-color: var(--bg-secondary);
+}
+
+.films-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.film-card {
+    display: flex;
+    background-color: var(--bg-card);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.film-poster {
+    width: 300px;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.film-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-medium);
+}
+
+.film-card:hover .film-poster img {
+    transform: scale(1.05);
+}
+
+.film-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.film-card:hover .film-overlay {
+    opacity: 1;
+}
+
+.play-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--lakers-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--lakers-purple);
+    font-size: 1.5rem;
+    transition: transform var(--transition-fast);
+}
+
+.play-button:hover {
+    transform: scale(1.1);
+}
+
+.film-info {
+    flex: 1;
+    padding: 2rem;
+}
+
+.film-info h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--lakers-gold);
+}
+
+.film-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.film-year {
+    padding: 0.25rem 0.75rem;
+    background-color: var(--lakers-purple);
+    border-radius: 50px;
+    font-size: 0.875rem;
+}
+
+.film-award {
+    padding: 0.25rem 0.75rem;
+    background-color: var(--lakers-gold);
+    color: var(--lakers-purple);
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.film-description {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.film-credits {
+    margin-bottom: 1.5rem;
+}
+
+.film-credits p {
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.film-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.film-tags span {
+    padding: 0.25rem 0.75rem;
+    background-color: rgba(85, 37, 131, 0.2);
+    border-radius: 50px;
+    font-size: 0.75rem;
+}
+
+/* Philanthropy Section */
+.philanthropy-section {
+    background-color: var(--bg-primary);
+}
+
+.philanthropy-content {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.philanthropy-image {
+    flex: 1;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.philanthropy-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.philanthropy-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.philanthropy-card {
+    display: flex;
+    background-color: var(--bg-card);
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: transform var(--transition-fast);
+}
+
+.philanthropy-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--lakers-purple);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--lakers-gold);
+    font-size: 1.25rem;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.card-content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.card-content p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.impact-numbers {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.impact-item {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--bg-card);
+    border-radius: 10px;
+    transition: transform var(--transition-fast);
+}
+
+.impact-item:hover {
+    transform: translateY(-5px);
+}
+
+.impact-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--lakers-gold);
+    margin-bottom: 0.5rem;
+}
+
+.impact-item p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+/* Gallery Section */
+.gallery-section {
+    background-color: var(--bg-secondary);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 250px;
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.item-tall {
+    grid-row: span 2;
+}
+
+.item-wide {
+    grid-column: span 2;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-medium);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-caption h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.gallery-caption p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: var(--bg-primary);
+}
+
+.contact-container {
+    display: flex;
+    gap: 3rem;
+}
+
+.contact-form-container {
+    flex: 2;
+}
+
+.contact-form {
+    background-color: var(--bg-card);
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-container {
+    position: relative;
+}
+
+.input-container input,
+.input-container textarea {
+    width: 100%;
+    padding: 1rem 0;
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.input-container textarea {
+    min-height: 120px;
+    resize: none;
+}
+
+.input-container label {
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    pointer-events: none;
+    transition: all var(--transition-fast);
+    color: var(--text-secondary);
+}
+
+.input-container input:focus~label,
+.input-container input:valid~label,
+.input-container textarea:focus~label,
+.input-container textarea:valid~label {
+    top: -10px;
+    font-size: 0.875rem;
+    color: var(--lakers-gold);
+}
+
+.input-underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--text-secondary);
+}
+
+.input-underline::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--lakers-gold);
+    transform: scaleX(0);
+    transition: transform var(--transition-fast);
+    transform-origin: left;
+}
+
+.input-container input:focus~.input-underline::after,
+.input-container textarea:focus~.input-underline::after {
+    transform: scaleX(1);
+}
+
+.submit-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--lakers-gold);
+    color: var(--lakers-purple);
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.submit-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.submit-button i {
+    margin-left: 0.75rem;
+}
+
+.contact-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info-card {
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: transform var(--transition-fast);
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+}
+
+.info-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--lakers-purple);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--lakers-gold);
+    font-size: 1.25rem;
+    margin-right: 1rem;
+}
+
+.info-content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.info-content p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+/* Footer */
+.portfolio-footer {
+    background-color: var(--bg-secondary);
+    padding: 3rem 2rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.footer-logo {
+    margin-bottom: 1.5rem;
+}
+
+.footer-quote {
+    max-width: 600px;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.back-link {
+    color: var(--lakers-gold);
+    transition: color var(--transition-fast);
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .portfolio-nav {
+        width: 240px;
+    }
+
+    .portfolio-content {
+        margin-left: 240px;
+    }
+
+    .hero-content {
+        padding: 0 2rem;
+    }
+
+    .glitch-text {
+        font-size: 3.5rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .impact-numbers {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .portfolio-nav {
+        transform: translateX(-100%);
+    }
+
+    .portfolio-nav.active {
+        transform: translateX(0);
+    }
+
+    .portfolio-content {
+        margin-left: 0;
+    }
+
+    .mobile-header {
+        display: flex;
+    }
+
+    .portfolio-section {
+        padding-top: 6rem;
+    }
+
+    .hero-section {
+        flex-direction: column;
+    }
+
+    .hero-content {
+        width: 100%;
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .hero-subtitle {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-image {
+        position: relative;
+        width: 100%;
+        height: 50vh;
+    }
+
+    .image-overlay {
+        background: linear-gradient(to bottom, var(--bg-primary), transparent);
+    }
+
+    .philanthropy-content {
+        flex-direction: column;
+    }
+
+    .films-container {
+        gap: 2rem;
+    }
+
+    .film-card {
+        flex-direction: column;
+    }
+
+    .film-poster {
+        width: 100%;
+        height: 300px;
+    }
+
+    .contact-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .glitch-text {
+        font-size: 2.5rem;
+    }
+
+    .ventures-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    .books-showcase {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .impact-numbers {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .item-wide {
+        grid-column: span 1;
+    }
+
+    .social-container {
+        flex-wrap: wrap;
+    }
+}

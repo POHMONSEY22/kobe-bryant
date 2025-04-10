@@ -1,0 +1,586 @@
+/* Gallery Page Specific Styles */
+
+:root {
+    --lakers-purple: #552583;
+    --lakers-gold: #FDB927;
+    --lakers-purple-dark: #2a1142;
+    --lakers-gold-dark: #d49000;
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --bg-primary: #121212;
+    --bg-secondary: #1e1e1e;
+    --bg-card: #252525;
+    --glow-color: rgba(253, 185, 39, 0.3);
+    --transition-slow: 0.5s cubic-bezier(0.68, 0.85, 0.265, 1.55);
+    --transition-medium: 0.3s cubic-bezier(0.68, 0.85, 0.265, 1.55);
+    --transition-fast: 0.2s ease;
+}
+
+.light {
+    --text-primary: #121212;
+    --text-secondary: rgba(0, 0, 0, 0.7);
+    --bg-primary: #f5f5f5;
+    --bg-secondary: #e5e5e5;
+    --bg-card: #ffffff;
+    --glow-color: rgba(85, 37, 131, 0.2);
+}
+
+/* Gallery Hero Section */
+.gallery-hero {
+    background: linear-gradient(135deg, var(--lakers-purple), var(--lakers-purple-dark));
+    padding: 8rem 0 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://placehold.co/1920x1080');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+}
+
+.gallery-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.gallery-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.gallery-title span {
+    color: var(--lakers-gold);
+}
+
+.gallery-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+}
+
+/* Gallery Filter Section */
+.gallery-filter {
+    background-color: var(--bg-primary);
+    padding: 2rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.filter-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.filter-label {
+    font-weight: 600;
+    margin-right: 0.5rem;
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.filter-button {
+    padding: 0.5rem 1rem;
+    background: none;
+    border: 2px solid var(--lakers-purple);
+    border-radius: 50px;
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.filter-button:hover,
+.filter-button.active {
+    background-color: var(--lakers-purple);
+    color: var(--lakers-gold);
+}
+
+.search-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.search-input {
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+}
+
+.search-input input {
+    width: 100%;
+    padding: 0.75rem 3rem 0.75rem 1rem;
+    background-color: var(--bg-card);
+    border: none;
+    border-radius: 50px;
+    color: var(--text-primary);
+    font-size: 0.875rem;
+}
+
+.search-input input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--lakers-gold);
+}
+
+.search-button {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: color var(--transition-fast);
+}
+
+.search-button:hover {
+    color: var(--lakers-gold);
+}
+
+/* Main Gallery Section */
+.main-gallery {
+    padding: 4rem 0;
+    background-color: var(--bg-primary);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    aspect-ratio: 3/2;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-medium);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-item-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 1.5rem;
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.gallery-item:hover .gallery-item-overlay {
+    opacity: 1;
+}
+
+.item-info h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: var(--lakers-gold);
+}
+
+.item-info p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.item-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--lakers-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--lakers-purple);
+    font-size: 1rem;
+    transition: transform var(--transition-fast);
+}
+
+.gallery-item:hover .item-icon {
+    transform: scale(1.1);
+}
+
+.gallery-load-more {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.load-more-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--lakers-gold);
+    color: var(--lakers-purple);
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.load-more-button:hover {
+    background-color: var(--lakers-gold-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.load-more-button i {
+    margin-left: 0.75rem;
+}
+
+/* Fan Submissions Section */
+.fan-submissions {
+    padding: 6rem 0;
+    background-color: var(--bg-secondary);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-header h2 span {
+    color: var(--lakers-gold);
+}
+
+.section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: var(--lakers-gold);
+}
+
+.section-header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.submission-form-container {
+    max-width: 800px;
+    margin: 0 auto 4rem;
+}
+
+.submission-form {
+    background-color: var(--bg-card);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: var(--bg-primary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--lakers-gold);
+}
+
+.upload-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+}
+
+.upload-container input[type="file"] {
+    display: none;
+}
+
+.upload-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--lakers-purple);
+    color: var(--lakers-gold);
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.upload-button:hover {
+    background-color: var(--lakers-purple-dark);
+}
+
+.upload-button i {
+    margin-right: 0.5rem;
+}
+
+.file-name {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.submit-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--lakers-gold);
+    color: var(--lakers-purple);
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.submit-button:hover {
+    background-color: var(--lakers-gold-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.submit-button i {
+    margin-left: 0.75rem;
+}
+
+.fan-gallery h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--lakers-gold);
+}
+
+.fan-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.fan-item {
+    background-color: var(--bg-card);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform var(--transition-fast);
+}
+
+.fan-item:hover {
+    transform: translateY(-10px);
+}
+
+.fan-image {
+    width: 100%;
+    height: 200px;
+}
+
+.fan-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.fan-info {
+    padding: 1.5rem;
+}
+
+.fan-info h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--lakers-gold);
+}
+
+.fan-info p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.fan-description {
+    font-style: italic;
+    line-height: 1.6;
+}
+
+/* Lightbox Customization */
+.lg-backdrop {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+}
+
+.lg-toolbar,
+.lg-outer .lg-thumb-outer {
+    background-color: rgba(85, 37, 131, 0.8) !important;
+}
+
+.lg-toolbar .lg-icon,
+.lg-actions .lg-next,
+.lg-actions .lg-prev {
+    color: var(--lakers-gold) !important;
+}
+
+.lg-toolbar .lg-icon:hover,
+.lg-actions .lg-next:hover,
+.lg-actions .lg-prev:hover {
+    color: var(--lakers-gold-dark) !important;
+}
+
+.lg-sub-html h4 {
+    color: var(--lakers-gold) !important;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .gallery-title {
+        font-size: 3rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    .fan-gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-title {
+        font-size: 2.5rem;
+    }
+
+    .gallery-subtitle {
+        font-size: 1rem;
+    }
+
+    .filter-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-container {
+        width: 100%;
+        justify-content: flex-start;
+        margin-top: 1rem;
+    }
+
+    .search-input {
+        max-width: 100%;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .fan-gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .gallery-title {
+        font-size: 2rem;
+    }
+
+    .filter-buttons {
+        width: 100%;
+    }
+
+    .filter-button {
+        flex: 1;
+        text-align: center;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .upload-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .upload-button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .file-name {
+        width: 100%;
+    }
+
+    .submit-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
